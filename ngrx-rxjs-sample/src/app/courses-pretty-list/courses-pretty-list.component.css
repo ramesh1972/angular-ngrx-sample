@@ -1,0 +1,11 @@
+.course-pretty {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #a17ceb;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    width:100%;
+}

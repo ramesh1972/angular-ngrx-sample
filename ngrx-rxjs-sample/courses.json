@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Physics",
+        "department": "Science"
+    },
+    {
+        "id": 1,
+        "name": "Chemistry",
+        "department": "Science"
+    },
+    {
+        "id": 1,
+        "name": "Mathematics",
+        "department": "Science"
+    }
+]
