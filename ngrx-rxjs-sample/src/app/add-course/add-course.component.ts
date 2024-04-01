@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CourseItem } from '../store/models/courseItem.model';
-import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
-import { invokeSaveNewCourseItemAPI, invokeCourseItemsAPI } from '../store/actions/course.action';
+import { select } from '@ngrx/store';
+import { Appstate } from '../store/shared/appstate';
+
+import { CourseItem } from '../store/models/courseItem.model';
+import { invokeSaveNewCourseItemAPI } from '../store/actions/course.action';
 import { setAPIStatus } from '../store/shared/app.action';
 import { selectAppState } from '../store/shared/app.selector';
-import { select } from '@ngrx/store';
-import { Courses } from '../store/models/courses.model';
-import { selectCourses } from '../store/selectors/courses.selector';
-import { Appstate } from '../store/shared/appstate';
 
 @Component({
   selector: 'app-add-course',
@@ -24,18 +22,17 @@ export class AddCourseComponent implements OnInit {
   addCourseStatus = '';
 
   ngOnInit(): void {
-    //this.store.dispatch(invokeCourseItemsAPI());
-
     this.saveStatus$.subscribe((status) => {
       this.addCourseStatus = status.apiResponseMessage;
     });
-
-    this.appStore.dispatch(
-      setAPIStatus({ apiStatus: { apiResponseMessage: 'Click on Submit', apiStatus: '' } })
-    );
-        console.log('appState in add-course:', this.saveStatus$);
   }
 
+  changeStatus() {
+    this.appStore.dispatch(
+      setAPIStatus({ apiStatus: { apiResponseMessage: 'Enter Course Details & Click on Submit', apiStatus: '' } })
+    );
+  }
+  
   addCourse(form: NgForm) {
     const courseItem: CourseItem = {
       name: form.value.name,
@@ -45,7 +42,7 @@ export class AddCourseComponent implements OnInit {
     console.log('Course Item:', courseItem);
     this.store.dispatch(invokeSaveNewCourseItemAPI({ newCourse: courseItem }));
     form.reset();
-
+    
     let apiStatus$ = this.appStore.pipe(select(selectAppState));
     apiStatus$.subscribe((apState) => {
       if (apState.apiStatus == 'success') {

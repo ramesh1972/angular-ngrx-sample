@@ -1,11 +1,11 @@
-.course-pretty {
+.department {
     display: flex;
     flex-direction: column;
     margin: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(12, 4, 30, 0.2);
     border-radius: 5px;
     background-color: #a17ceb;
-    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 2px 0px rgba(12, 4, 30, 0.6);
     width:100%;
 }

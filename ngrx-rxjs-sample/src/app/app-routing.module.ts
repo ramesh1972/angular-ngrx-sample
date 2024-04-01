@@ -1,15 +1,13 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { CoursesPrettyListComponent } from './courses-pretty-list/courses-pretty-list.component';
+import { DepartmentsComponent } from './departments/departments.component';
 import { AddCourseComponent } from './add-course/add-course.component';
-import {CoursesListComponent} from './courses-list/courses-list.component';
+import { CoursesListComponent } from './courses-list/courses-list.component';
 
 const routes: Routes = [
   { path: '', component: AddCourseComponent },
   { path: 'courses', component: CoursesListComponent },
-  { path: 'courses-pretty', component: CoursesPrettyListComponent },
+  { path: 'departments', component: DepartmentsComponent },
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(routes);

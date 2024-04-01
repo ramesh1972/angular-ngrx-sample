@@ -1,11 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
-import { CoursesPrettyListComponent } from './courses-pretty-list.component';
+import { DepartmentsComponent } from './departments.component';
 
-describe('CoursesPrettyListComponent', () => {
+describe('DepartmentsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        CoursesListComponent
+        DepartmentsComponent
       ],
     }).compileComponents();
   }));

@@ -1,6 +1,6 @@
 <section>
-  <div class="container">
-    <div class="row" style="background-color: aqua;padding-top:20px;padding-bottom:20px">
+  <div class="container" style="background-color: aqua;padding-top:20px;padding-bottom:20px">
+    <div class="row">
       <div class="col-md-12">
         <h5>Observe that the Courses in the Store are displayed with no extra state binding code.</h5>
         <h6>And also when a course is added to the store, the new state (with new course) is reflected here without any extra store access or state binding code</h6>
@@ -9,8 +9,8 @@
       <div class="col-md-6">
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let course of courseItems$ |  async">
-            <span>Course: {{course.name}}</span><br />
-            <span>Dept:<b>{{course.department}}</b></span>
+            <span>Course: <b>{{course.name}}</b></span><br />
+            <span>Dept:{{course.department}}</span>
           </li>
         </ul>
       </div>

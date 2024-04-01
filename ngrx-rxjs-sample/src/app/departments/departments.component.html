@@ -1,18 +1,17 @@
 <section>
-  <div class="container">
-    <div class="row" style="background-color: aqua;">
+  <div class="container" style="justify-content: left;padding-top:20px;padding-bottom:20px; background-color: lightgoldenrodyellow;">
+    <div class="row">
       <div class="col-md-12">
         <h5>Demo of a different display of Courses list, Grouped By Department</h5>
         <h6>When a course is added to the store, the new state (with new course) is reflected here without any extra store access or state binding code</h6>
         <h6>...and that 'departments' 'local state' variable changes because of this.courseItems$.'subscribe()'' method set in NgInit()</h6>
-
       </div>
 
       <div class="col-md-6">
         <ul class="list-group">
-          <li class="list-group-item course-pretty" *ngFor="let dept of departments">
-            <strong>Courses in Department <span style="color: white;">{{dept.department}}</span> are:</strong>
-            <ul class="list-group">
+          <li class="list-group-item department" *ngFor="let dept of _departments">
+            <strong>Courses in Department <span style="color: white;">{{dept.department}}</span></strong>
+            <ul class="list-group" style="padding-top: 8px;">
               <li class="list-group-item" *ngFor="let course of dept.deptCourses">
                 <span>Course: {{course.name}}</span>
               </li>
