@@ -18,13 +18,15 @@ export class AppComponent implements OnInit {
   courseItems$ = this.store.pipe(select(selectCourses));
 
   ngOnInit(): void {
+
+
+    this.store.dispatch(invokeCourseItemsAPI());
+
     this.appStore.dispatch(
       setAPIStatus({
         apiStatus: { apiResponseMessage: 'Let us build the courses', apiStatus: 'success' },
       })
     );
-
-    this.store.dispatch(invokeCourseItemsAPI());
   }
 }
 

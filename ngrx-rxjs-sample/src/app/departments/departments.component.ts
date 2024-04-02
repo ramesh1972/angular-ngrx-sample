@@ -25,6 +25,7 @@ export class DepartmentsComponent implements OnInit {
         this.groupByDepartment(courseItems);
       },
       error: err => console.error(err),
+
     });
   }
 

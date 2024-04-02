@@ -11,7 +11,7 @@
         <ul class="list-group">
           <li class="list-group-item department" *ngFor="let dept of _departments">
             <strong>Courses in Department <span style="color: white;">{{dept.department}}</span></strong>
-            <ul class="list-group" style="padding-top: 8px;">
+            <ul class="list-group" style="padding-top: ;">
               <li class="list-group-item" *ngFor="let course of dept.deptCourses">
                 <span>Course: {{course.name}}</span>
               </li>

@@ -3,7 +3,7 @@ import { setAPIStatus } from './app.action';
 import { Appstate } from './appstate';
 
 export const initialState: Readonly<Appstate> = {
-  apiResponseMessage: 'Build the University',
+  apiResponseMessage: '',
   apiStatus: '',
 };
 

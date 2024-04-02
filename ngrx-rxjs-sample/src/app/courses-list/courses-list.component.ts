@@ -17,6 +17,7 @@ export class CoursesListComponent implements OnInit {
 
   courseItems$ = this.store.pipe(select(selectCourses));
 
+
   ngOnInit(): void {
   }
 }
